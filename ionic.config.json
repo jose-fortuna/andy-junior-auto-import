@@ -1,0 +1,7 @@
+{
+  "name": "andy-junior-auto-import",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
