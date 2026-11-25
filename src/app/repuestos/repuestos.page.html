@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Catálogo de repuestos</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <h1>Repuestos importados</h1>
+  <p>Calidad y garantía para tu vehículo.</p>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>Mi selección de repuestos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>Desliza hacia la izquierda para quitar un repuesto.</p>
+
+      <ion-list>
+
+        @for (repuesto of repuestos; track repuesto.id) {
+
+          <ion-item-sliding>
+
+            <ion-item>
+              <ion-label>
+                <h2>{{ repuesto.nombre }}</h2>
+                <p>Año: {{ repuesto.anio }}</p>
+                <p>Precio: {{ repuesto.precio }}</p>
+              </ion-label>
+            </ion-item>
+
+            <ion-item-options side="end">
+
+              <ion-item-option
+                color="danger"
+                (click)="eliminarRepuesto(repuesto.id)">
+
+                <ion-icon
+                  slot="start"
+                  name="trash-outline">
+                </ion-icon>
+
+                Eliminar
+
+              </ion-item-option>
+
+            </ion-item-options>
+
+          </ion-item-sliding>
+
+        }
+
+      </ion-list>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <ion-button expand="block" routerLink="/home">
+    Volver al inicio
+  </ion-button>
+
+</ion-content>

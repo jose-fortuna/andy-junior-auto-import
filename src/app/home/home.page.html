@@ -1,21 +1,55 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title> Blank </ion-title>
+    <ion-buttons slot="start">
+  <ion-menu-button></ion-menu-button>
+</ion-buttons>
+    <ion-title>Andy Junior Auto Import</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>
-      Start with Ionic
-      <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a>
-    </p>
+  <div class="logo-container">
+    <img src="assets/img/logo.jpeg" alt="Andy Junior Auto Import">
   </div>
+
+  <h1>Bienvenidos</h1>
+  <p>Repuestos importados con garantía.</p>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Motores</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Motores importados para diferentes vehículos.
+      <ion-button expand="block" routerLink="/motores">
+        Ver motores
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Transmisiones</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Transmisiones automáticas y mecánicas.
+      <ion-button expand="block" routerLink="/transmisiones">
+        Ver transmisiones
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Repuestos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      Piezas y accesorios para tu vehículo.
+      <ion-button expand="block" routerLink="/repuestos">
+        Ver repuestos
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
 </ion-content>

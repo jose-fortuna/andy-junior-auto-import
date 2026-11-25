@@ -1,0 +1,62 @@
+ion-menu {
+  --width: 280px;
+}
+
+ion-menu ion-toolbar {
+  --background: #c62828;
+  --color: #ffcc00;
+}
+
+ion-menu ion-content {
+  --background: #fffbea;
+}
+
+.encabezado-menu {
+  background: #c62828;
+  padding: 25px 15px;
+  text-align: center;
+}
+
+.encabezado-menu img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 15px;
+  background: #ffffff;
+  border: 3px solid #ffcc00;
+}
+
+.encabezado-menu h2 {
+  color: #ffcc00;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.encabezado-menu p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+ion-menu ion-list {
+  background: transparent;
+  padding: 15px 10px;
+}
+
+ion-menu ion-item {
+  --background: #ffffff;
+  --color: #333333;
+  --border-radius: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+ion-menu ion-icon {
+  color: #c62828;
+  font-size: 24px;
+}
+
+ion-split-pane {
+  --side-width: 280px;
+  --side-min-width: 260px;
+  --side-max-width: 300px;
+}

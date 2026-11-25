@@ -10,4 +10,16 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'motores',
+    loadComponent: () => import('./motores/motores.page').then((m) => m.MotoresPage),
+  },
+  {
+    path: 'transmisiones',
+    loadComponent: () => import('./transmisiones/transmisiones.page').then((m) => m.TransmisionesPage),
+  },
+  {
+    path: 'repuestos',
+    loadComponent: () => import('./repuestos/repuestos.page').then((m) => m.RepuestosPage),
+  },
 ];

@@ -1,0 +1,98 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>Catálogo de motores</ion-title>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-refresher slot="fixed" (ionRefresh)="actualizar($event)">
+    <ion-refresher-content
+      pullingText="Desliza para actualizar"
+      refreshingText="Actualizando catálogo...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <h1>Motores importados</h1>
+  <p>Calidad y garantía para tu vehículo.</p>
+  <p>{{ estado }}</p>
+
+  @for (motor of motores; track motor.id) {
+
+    <ion-card>
+
+      <ion-card-header
+  (pointerdown)="iniciarPulsacion(motor)"
+  (pointerup)="cancelarPulsacion()"
+  (pointerleave)="cancelarPulsacion()"
+  (pointercancel)="cancelarPulsacion()"
+  (pointermove)="cancelarPulsacion()"
+  (contextmenu)="$event.preventDefault()">
+
+  <ion-card-title>
+    {{ motor.nombre }}
+  </ion-card-title>
+
+  <p>Mantén presionado para ver opciones.</p>
+
+</ion-card-header>
+
+      <div class="contenedor-imagen"
+        (touchstart)="iniciarZoom($event, motor.id)"
+        (touchmove)="moverZoom($event, motor.id)"
+        (touchend)="finalizarZoom()"
+        (touchcancel)="finalizarZoom()">
+
+        <img
+          [src]="motor.imagen"
+          [alt]="motor.nombre"
+          [style.transform]="'scale(' + (escalas[motor.id] || 1) + ')'"
+          draggable="false">
+
+      </div>
+
+      <p>Utiliza dos dedos para ampliar la imagen.</p>
+
+      <ion-button
+        expand="block"
+        fill="outline"
+        size="small"
+        (click)="restablecerZoom(motor.id)">
+        Restablecer imagen
+      </ion-button>
+
+      <ion-card-content>
+
+        <ion-list>
+
+          <ion-item>
+            <ion-label>Tipo: {{ motor.tipo }}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Año: {{ motor.anio }}</ion-label>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Precio: {{ motor.precio }}</ion-label>
+          </ion-item>
+
+        </ion-list>
+
+      </ion-card-content>
+
+    </ion-card>
+
+  }
+
+  <ion-button expand="block" routerLink="/home">
+    Volver al inicio
+  </ion-button>
+
+</ion-content>
